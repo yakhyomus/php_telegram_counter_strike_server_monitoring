@@ -12,7 +12,7 @@ if (empty($data['message']['chat']['id'])) {
 // Функция вызова методов API.
 function sendTelegram($method, $response)
 {
-	$ch = curl_init('https://api.telegram.org/bot' . TOKEN . '/' . $method);  
+	$ch = curl_init('https://api.telegram.org/bot' . $token . '/' . $method);  
 	curl_setopt($ch, CURLOPT_POST, 1);  
 	curl_setopt($ch, CURLOPT_POSTFIELDS, $response);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -23,7 +23,7 @@ function sendTelegram($method, $response)
 	return $res;
 }
 
-// Если отправить боту текст или команду
+// Прием команды боту
 if (!empty($data['message']['text'])) {
 	$text = $data['message']['text'];
 	if (mb_stripos($text, $command) !== false) {
