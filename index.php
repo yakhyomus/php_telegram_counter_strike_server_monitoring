@@ -12,7 +12,7 @@ if (empty($data['message']['chat']['id'])) {
 // Функция вызова методов API.
 function sendTelegram($method, $response)
 {
-	$ch = curl_init('https://api.telegram.org/bot' . $token . '/' . $method);  
+	$ch = curl_init('https://api.telegram.org/bot' . TOKEN . '/' . $method);  
 	curl_setopt($ch, CURLOPT_POST, 1);  
 	curl_setopt($ch, CURLOPT_POSTFIELDS, $response);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
