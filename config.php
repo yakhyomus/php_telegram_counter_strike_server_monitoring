@@ -1,5 +1,5 @@
 <?php
-$token = 'TOKEN'; // Пишем тут ваш токен (Telegram: @Bot_Father)
+$token = 'TOKEN'; // Пишем тут ваш токен (Telegram: @BotFather)
 $command = '/info'; // Напишите "/info" чтобы бот отреогировал
 $ip = '123.123.123.123'; // IP вашего сервера
 $port = '27015'; //Порт вашего сервера
