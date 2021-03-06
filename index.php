@@ -23,7 +23,7 @@ function sendTelegram($method, $response)
 	return $res;
 }
 
-// Прием команды боту
+// Ответ на запрос боту.
 if (!empty($data['message']['text'])) {
 	$text = $data['message']['text'];
 	if (mb_stripos($text, $command) !== false) {
@@ -31,13 +31,11 @@ if (!empty($data['message']['text'])) {
 			'sendMessage', 
 			array(
 				'chat_id' => $data['message']['chat']['id'],
-				'text' => $output;
+				'text' => $output
 			)
 		);
  
 		exit();	
 	} 
-	exit(ok);	
-	}
-}
-
+ }
+ 
