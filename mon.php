@@ -11,7 +11,7 @@ $aData = $sq->GetInfo();
 $aData['Players'] = $aData['Players'] < 1 ? 0 : $aData['Players'];
 $aData['status'] = strlen($aData['Map']) > 3 ? ''.$aData['Map'].'' : 'не определена';
 $output .= '
-	Public #1
+	'.$aData['HostName'].'
 	IP: '.$ip.':'.$port.'
 	Карта: '.$aData['status'].'
 	Игроки: '.$aData['Players'].' из '.$aData['MaxPlayers'].'
