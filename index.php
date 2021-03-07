@@ -26,11 +26,13 @@ function sendTelegram($method, $response)
 // Ответ на запрос боту.
 if (!empty($data['message']['text'])) {
 	$text = $data['message']['text'];
+	$messid = $data['message']['message_id'];
 	if (mb_stripos($text, $command) !== false) {
 		sendTelegram(
 			'sendMessage', 
 			array(
 				'chat_id' => $data['message']['chat']['id'],
+				'reply_to_message_id' => $messid,
 				'text' => $output
 			)
 		);
